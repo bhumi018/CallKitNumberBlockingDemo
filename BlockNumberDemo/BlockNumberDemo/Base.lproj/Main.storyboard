@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Block View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BlockViewController" customModule="BlockNumberDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block Contacts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhN-bB-LFr">
+                                <rect key="frame" x="35" y="94" width="323" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2NY-Or-i6x">
+                                <rect key="frame" x="35" y="150" width="323" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Yri-ft-FBq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkf-Pj-h5s">
+                                <rect key="frame" x="35" y="225" width="323" height="40"/>
+                                <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="xxn-UR-MiO"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Block the number"/>
+                                <connections>
+                                    <action selector="onClickBtnBlock:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wNu-eI-Fzp"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0i1-kJ-T4f">
+                                <rect key="frame" x="35" y="300" width="323" height="468"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="phoneCell" id="Udz-qo-aVC">
+                                        <rect key="frame" x="0.0" y="50" width="323" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Udz-qo-aVC" id="lTh-ev-Gze">
+                                            <rect key="frame" x="0.0" y="0.0" width="323" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zdZ-Fz-TGq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gDL-xd-Lws"/>
+                                </connections>
+                            </tableView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oah-qT-g33">
+                                <rect key="frame" x="35" y="793" width="323" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nkf-Pj-h5s" firstAttribute="trailing" secondItem="2NY-Or-i6x" secondAttribute="trailing" id="F2e-2q-PGa"/>
+                            <constraint firstItem="0i1-kJ-T4f" firstAttribute="trailing" secondItem="nkf-Pj-h5s" secondAttribute="trailing" id="Fug-De-Nuz"/>
+                            <constraint firstItem="0i1-kJ-T4f" firstAttribute="top" secondItem="nkf-Pj-h5s" secondAttribute="bottom" constant="35" id="HEs-bZ-dE0"/>
+                            <constraint firstItem="QhN-bB-LFr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="HGb-Xz-yDn"/>
+                            <constraint firstItem="oah-qT-g33" firstAttribute="top" secondItem="0i1-kJ-T4f" secondAttribute="bottom" constant="25" id="HWJ-cV-Igk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="oah-qT-g33" secondAttribute="bottom" constant="25" id="IGg-DT-6qE"/>
+                            <constraint firstItem="2NY-Or-i6x" firstAttribute="top" secondItem="QhN-bB-LFr" secondAttribute="bottom" constant="35" id="MKo-9s-dzh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QhN-bB-LFr" secondAttribute="trailing" constant="35" id="MV5-tD-gOe"/>
+                            <constraint firstItem="2NY-Or-i6x" firstAttribute="trailing" secondItem="QhN-bB-LFr" secondAttribute="trailing" id="PBr-jp-rKh"/>
+                            <constraint firstItem="nkf-Pj-h5s" firstAttribute="top" secondItem="2NY-Or-i6x" secondAttribute="bottom" constant="35" id="Uk0-ir-cFm"/>
+                            <constraint firstItem="QhN-bB-LFr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="Zsc-an-lli"/>
+                            <constraint firstItem="0i1-kJ-T4f" firstAttribute="leading" secondItem="nkf-Pj-h5s" secondAttribute="leading" id="a2r-Yo-g7j"/>
+                            <constraint firstItem="oah-qT-g33" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="e1M-Ba-fa1"/>
+                            <constraint firstItem="2NY-Or-i6x" firstAttribute="leading" secondItem="QhN-bB-LFr" secondAttribute="leading" id="oA0-e0-pH1"/>
+                            <constraint firstItem="nkf-Pj-h5s" firstAttribute="leading" secondItem="2NY-Or-i6x" secondAttribute="leading" id="qNs-aI-lgv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oah-qT-g33" secondAttribute="trailing" constant="35" id="y4D-sV-B0v"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblError" destination="oah-qT-g33" id="ekP-1I-1iN"/>
+                        <outlet property="tblView" destination="0i1-kJ-T4f" id="5tv-qE-T4e"/>
+                        <outlet property="txtPhoneNumber" destination="2NY-Or-i6x" id="MLr-Z5-Deb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131" y="-27"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
